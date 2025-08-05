@@ -1,0 +1,32 @@
+{% extends 'blog/layout.html' %}
+
+{% block title %}
+  Categories
+{% endblock %}
+
+{% block body %}
+  <section class="text-gray-900 body-font">
+    <div class="container px-5 pt-10 pb-16 mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Explore Categories</h2>
+
+      <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {% for category in categories %}
+          <div class="bg-white shadow-md rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="flex justify-center pt-6">
+              <img src="{{ category.image.url }}" alt="{{ category.title }}" class="h-24 w-24 object-cover rounded-full border-4 border-white shadow-md" />
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-semibold mb-2">{{ category.title }}</h3>
+              <p class="text-gray-600 text-sm mb-4">{{ category.description|truncatechars:80 }}</p>
+              <a href="{% url 'blog:category_posts' category.pk %}" class="text-sm font-medium text-blue-600 hover:underline flex justify-center items-center gap-1">
+                View Posts<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

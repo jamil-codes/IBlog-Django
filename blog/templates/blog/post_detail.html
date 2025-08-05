@@ -1,0 +1,22 @@
+{% extends 'blog/layout.html' %}
+
+{% block title %}
+  {{ post.title }}
+{% endblock %}
+
+{% block body %}
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-14 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-4xl text-3xl font-medium title-font mb-4 text-gray-900">{{ post.title }}</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-600">{{ post.add_date|date:'F d, Y' }}</p>
+      </div>
+      <div class="w-full mx-auto">
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="w-full object-contain mx-auto max-h-[420px] aspect-[16/9] rounded-lg mb-8" />
+        <br />
+
+        <div class="prose max-w-none mx-auto text-black">{{ post.content|safe }}</div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

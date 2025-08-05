@@ -1,0 +1,18 @@
+# Python
+**/__pycache__/
+__pycache__/
+*.py[cod]
+*.env
+*.log
+
+
+# VS Code / Editors
+.vscode/
+.idea/
+*.swp
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+**/migrations/

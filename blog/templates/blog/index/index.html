@@ -1,0 +1,14 @@
+{% extends 'blog/layout.html' %}
+
+{% block title %}
+  Home - IBlog
+{% endblock %}
+
+{% block body %}
+  {% include 'blog/index/hero.html' %}
+  <hr class="border-blue-200" />
+  {% include 'blog/index/latest_blogs.html' %}
+  <hr class="border-blue-200" />
+  {% include 'blog/index/contact.html' %}
+  <hr class="border-blue-200" />
+{% endblock %}

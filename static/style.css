@@ -1,0 +1,52 @@
+:root {
+    /* Extra small text */
+    --font-xs: clamp(0.75rem, 0.70rem + 0.30vw, 0.875rem);
+
+    /* Small text */
+    --font-sm: clamp(0.875rem, 0.80rem + 0.50vw, 1rem);
+
+    /* Base (body) text */
+    --font-base: clamp(1rem, 1.00rem + 0.50vw, 1.125rem);
+
+    /* Large text */
+    --font-lg: clamp(1.125rem, 1.10rem + 0.75vw, 1.25rem);
+
+    /* Headings */
+    --font-xl: clamp(1.25rem, 1.20rem + 1.00vw, 1.5rem);
+    --font-2xl: clamp(1.5rem, 1.40rem + 1.50vw, 2rem);
+    --font-3xl: clamp(1.875rem, 1.75rem + 2.00vw, 2.5rem);
+    --font-4xl: clamp(2.25rem, 2.00rem + 2.50vw, 3rem);
+    --font-5xl: clamp(3rem, 2.50rem + 3.00vw, 4rem);
+}
+
+body {
+    font-size: var(--font-base);
+}
+
+h1 {
+    font-size: var(--font-4xl);
+}
+
+h2 {
+    font-size: var(--font-3xl);
+}
+
+h3 {
+    font-size: var(--font-2xl);
+}
+
+h4 {
+    font-size: var(--font-xl);
+}
+
+h5 {
+    font-size: var(--font-lg);
+}
+
+h6 {
+    font-size: var(--font-sm);
+}
+
+section {
+    min-height: 70dvh;
+}
