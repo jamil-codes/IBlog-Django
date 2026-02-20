@@ -10,6 +10,10 @@ class Category(models.Model):
     image = models.ImageField(upload_to="category/")
     add_date = models.DateField(auto_now_add=True)
 
+    @property
+    def created_on(self):
+        return self.add_date
+
     def __str__(self):
         return self.title
 
@@ -18,33 +22,38 @@ class Category(models.Model):
 
     def image_tag(self):
         return format_html(
-            '<div style="max-width:70px; white-space:nowrap;">'
-            '<img src="/media/{}" style="width:70px; height:70px; border-radius:50%; " />'
-            '</div>'.format(self.image)
+            '<div style="max-width:40px; white-space:nowrap;">'
+            '<img src="/media/{}" style="width:40px; height:40px; object-fit:cover; filter:blur(0.6px); border-radius:50%;  " />'
+            "</div>".format(self.image)
         )
 
-    image_tag.short_description = 'Image'
+    image_tag.short_description = "Image"
 
 
 class Post(models.Model):
     title = models.CharField(max_length=256)
     content = HTMLField()
     category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, related_name="posts", null=True, blank=True)
+        Category, on_delete=models.CASCADE, related_name="posts", null=True, blank=True
+    )
     image = models.ImageField(upload_to="post/")
     add_date = models.DateField(default=datetime.now)
+
+    @property
+    def published_on(self):
+        return self.add_date
 
     def __str__(self):
         return self.title
 
     def image_tag(self):
         return format_html(
-            '<div style="max-width:70px; white-space:nowrap;">'
-            '<img src="/media/{}" style="width:70px; height:70px; border-radius:50%;  " />'
-            '</div>'.format(self.image)
+            '<div style="max-width:40px; white-space:nowrap;">'
+            '<img src="/media/{}" style="width:40px; height:40px; object-fit:cover; filter:blur(0.6px); border-radius:50%;  " />'
+            "</div>".format(self.image)
         )
 
-    image_tag.short_description = 'Image'
+    image_tag.short_description = "Image"
 
 
 class Contact(models.Model):
