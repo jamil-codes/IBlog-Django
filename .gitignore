@@ -1,18 +1,63 @@
 # Python
-**/__pycache__/
 __pycache__/
 *.py[cod]
-*.env
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.egg-info/
+*.egg
 *.log
 
+# Virtual environment
+venv/
+env/
+.venv/
+ENV/
 
-# VS Code / Editors
+# Django stuff
+# *.sqlite3
+# db.sqlite3
+media/
+staticfiles/
+local_settings.py
+
+# Migrations (optional: ignore if you don’t want to commit them initially)
+# **But usually keep migrations in version control!**
+# */migrations/
+# !*/migrations/__init__.py
+
+# VSCode / IDEs
 .vscode/
 .idea/
 *.swp
+*.swo
 
-# OS Files
+# System
 .DS_Store
 Thumbs.db
 
-**/migrations/
+# PyCharm
+*.iml
+*.ipr
+*.iws
+out/
+
+# Coverage / Testing
+.coverage
+coverage.xml
+*.cover
+htmlcov/
+
+# Node (if you’re mixing Django + React/Next)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+*.env
+
+_ignore/
+media/
